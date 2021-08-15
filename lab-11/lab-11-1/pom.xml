@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>lab-07-spring-data-redis-unit-test</artifactId>
+    <artifactId>spring-data-redis-unit-test</artifactId>
 
     <dependencies>
 

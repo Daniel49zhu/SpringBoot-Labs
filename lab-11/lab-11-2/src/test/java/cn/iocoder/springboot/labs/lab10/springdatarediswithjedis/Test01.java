@@ -1,22 +1,25 @@
 package cn.iocoder.springboot.labs.lab10.springdatarediswithjedis;
 
 import cn.iocoder.springboot.labs.lab10.springdatarediswithjedis.cacheobject.UserCacheObject;
+import cn.iocoder.springboot.labs.lab10.springdatarediswithjedis.config.TestRedisConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = TestRedisConfiguration.class)
 public class Test01 {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
+    @Qualifier("testRedisTemplate")
     private RedisTemplate redisTemplate;
 
     @Test
